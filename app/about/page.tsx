@@ -67,49 +67,39 @@ export default function AboutPage() {
 
       <main>
         {/* Hero Section */}
-        <section className="relative py-16 md:py-24 px-4 overflow-hidden">
-          <div className="absolute inset-0 bg-[url('/soft-bg.png')] bg-cover opacity-20 pointer-events-none"></div>
+<section className="relative py-24 md:py-32 px-4 overflow-hidden">
 
-          <div className="max-w-6xl mx-auto relative">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-              <div className="space-y-6">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight tracking-tight">
-                  Luxury Beauty,  
-                  <span className="text-primary"> Naturally Yours</span>
-                </h1>
+  {/* Background Image */}
+  <div
+    className="absolute inset-0 bg-cover bg-center opacity-50"
+    style={{ backgroundImage: "url('/about-hero.jpg')" }}
+  ></div>
 
-                <p className="text-lg md:text-xl text-muted-foreground">
-                  Since 2015, REHHA has crafted premium beauty products with clean formulations, botanical extracts & sustainable elegance.
-                </p>
+  {/* Dark Overlay */}
+  <div className="absolute inset-0 bg-black/40"></div>
 
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Link 
-                    href="/products"
-                    className="px-8 py-3 rounded-full bg-primary text-primary-foreground shadow-md hover:shadow-lg hover:opacity-90 transition"
-                  >
-                    Explore Products
-                  </Link>
+  <div className="max-w-5xl mx-auto relative text-center md:text-left">
+    <div className="space-y-6">
 
-                  <Link 
-                    href="/contact"
-                    className="px-8 py-3 rounded-full border border-primary text-primary hover:bg-primary/5 transition"
-                  >
-                    Get in Touch
-                  </Link>
-                </div>
-              </div>
+      {/* Title */}
+      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight">
+        Luxury Beauty,
+        <span className="text-primary"> Naturally Yours</span>
+      </h1>
 
-              <div className="relative">
-                <img 
-                  src="/about-hero.jpg" 
-                  alt="REHHA Beauty Collection"
-                  className="w-full h-72 md:h-96 object-cover rounded-3xl shadow-2xl ring-1 ring-primary/10"
-                />
-                <div className="absolute -bottom-6 -right-6 w-28 h-28 bg-primary/10 blur-2xl rounded-full"></div>
-              </div>
-            </div>
-          </div>
-        </section>
+      {/* Description */}
+      <p className="text-lg md:text-xl text-white/80 leading-relaxed max-w-2xl">
+        Since 2015, REHHA has created premium beauty essentials crafted with clean formulations,
+        botanical extracts, and timeless elegance — designed to enhance your natural glow.
+      </p>
+
+      {/* Decoration Line */}
+      <div className="w-24 h-1 bg-primary/60 rounded-full mt-4"></div>
+    </div>
+  </div>
+
+</section>
+
 
         {/* Achievements */}
         <section className="py-12 md:py-16 px-4 bg-white/60 backdrop-blur-sm">
@@ -186,24 +176,31 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Timeline */}
-        <section className="py-16 md:py-24 px-4 bg-white">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-              Our Journey
-            </h2>
+        <section className="py-20 md:py-28 px-4 bg-gradient-to-b from-white to-rose-50/40">
+  <div className="max-w-6xl mx-auto">
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {milestones.map((m, idx) => (
-                <div key={idx} className="bg-white p-6 rounded-2xl shadow-md border border-rose-100">
-                  <p className="text-sm font-semibold text-primary">{m.year}</p>
-                  <h3 className="text-lg font-bold mt-1">{m.title}</h3>
-                  <p className="text-sm text-muted-foreground mt-2">{m.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+    <h2 className="text-3xl md:text-4xl font-bold text-center mb-14">
+      Our Journey
+    </h2>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      {milestones.map((m, idx) => (
+        <div 
+          key={idx} 
+          className="relative bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-lg border border-rose-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+        >
+          {/* Soft vertical border accent */}
+          <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary/60 to-primary/20 rounded-l-xl"></div>
+
+          <p className="text-sm font-semibold text-primary tracking-wide">{m.year}</p>
+          <h3 className="text-xl font-bold mt-2 text-foreground">{m.title}</h3>
+          <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{m.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
 
         {/* Team */}
         <section className="py-16 md:py-24 px-4 bg-rose-50/70">
@@ -242,7 +239,7 @@ export default function AboutPage() {
           </p>
 
           <Link 
-            href="/products"
+            href="/shop-all"
             className="px-10 py-4 rounded-full bg-primary text-primary-foreground shadow-md hover:shadow-lg transition"
           >
             Start Your Beauty Journey
