@@ -1,0 +1,86 @@
+{
+  "category": "fragrance",
+  "products": [
+    {
+      "id": 24,
+      "name": "Floral Fragrance",
+      "price": 85,
+      "category": "fragrance",
+      "image": "/floral-fragrance-perfume.jpg",
+      "images": ["/floral-fragrance-perfume.jpg", "/floral-fragrance-perfume.jpg", "/floral-fragrance-perfume.jpg"],
+      "description": "Beautiful floral fragrance with elegant notes"
+    },
+    {
+      "id": 25,
+      "name": "Vanilla Fragrance",
+      "price": 75,
+      "category": "fragrance",
+      "image": "/vanilla-fragrance-perfume.jpg",
+      "images": ["/vanilla-fragrance-perfume.jpg", "/vanilla-fragrance-perfume.jpg", "/vanilla-fragrance-perfume.jpg"],
+      "description": "Warm vanilla fragrance with luxurious scent"
+    },
+    {
+      "id": 26,
+      "name": "Citrus Splash",
+      "price": 68,
+      "category": "fragrance",
+      "image": "/citrus-splash-perfume.jpg",
+      "images": ["/citrus-splash-perfume.jpg", "/citrus-splash-perfume.jpg", "/citrus-splash-perfume.jpg"],
+      "description": "Refreshing citrus fragrance"
+    },
+    {
+      "id": 27,
+      "name": "Woody Essence",
+      "price": 92,
+      "category": "fragrance",
+      "image": "/woody-essence-perfume.jpg",
+      "images": ["/woody-essence-perfume.jpg", "/woody-essence-perfume.jpg", "/woody-essence-perfume.jpg"],
+      "description": "Deep woody fragrance with sophistication"
+    },
+    {
+      "id": 28,
+      "name": "Ocean Breeze",
+      "price": 72,
+      "category": "fragrance",
+      "image": "/ocean-breeze-perfume.jpg",
+      "images": ["/ocean-breeze-perfume.jpg", "/ocean-breeze-perfume.jpg", "/ocean-breeze-perfume.jpg"],
+      "description": "Fresh ocean breeze fragrance"
+    },
+    {
+      "id": 29,
+      "name": "Rose Garden",
+      "price": 88,
+      "category": "fragrance",
+      "image": "/rose-garden-perfume.jpg",
+      "images": ["/rose-garden-perfume.jpg", "/rose-garden-perfume.jpg", "/rose-garden-perfume.jpg"],
+      "description": "Romantic rose garden fragrance"
+    },
+    {
+      "id": 30,
+      "name": "Musk Elegance",
+      "price": 78,
+      "category": "fragrance",
+      "image": "/musk-elegance-perfume.jpg",
+      "images": ["/musk-elegance-perfume.jpg", "/musk-elegance-perfume.jpg", "/musk-elegance-perfume.jpg"],
+      "description": "Elegant musk fragrance"
+    },
+    {
+      "id": 31,
+      "name": "Jasmine Night",
+      "price": 82,
+      "category": "fragrance",
+      "image": "/jasmine-night-perfume.jpg",
+      "images": ["/jasmine-night-perfume.jpg", "/jasmine-night-perfume.jpg", "/jasmine-night-perfume.jpg"],
+      "description": "Nighttime jasmine fragrance"
+    },
+    {
+      "id": 32,
+      "name": "Lavender Essence",
+      "price": 64.99,
+      "category": "fragrance",
+      "image": "/lavender-essence-perfume.jpg",
+      "images": ["/lavender-essence-perfume.jpg", "/lavender-essence-perfume.jpg", "/lavender-essence-perfume.jpg"],
+      "description": "Calming lavender essence fragrance"
+    }
+  ]
+}

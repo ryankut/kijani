@@ -1,0 +1,131 @@
+{
+  "category": "skincare",
+  "products": [
+    {
+      "id": 1,
+      "name": "Hydrating Face Serum",
+      "price": 45,
+      "category": "skincare",
+      "image": "/hydrating-face-serum.jpg",
+      "images": ["/hydrating-face-serum.jpg", "/hydrating-face-serum.jpg", "/hydrating-face-serum.jpg"],
+      "description": "Lightweight hydrating serum for glowing skin"
+    },
+    {
+      "id": 2,
+      "name": "Eye Cream",
+      "price": 52,
+      "category": "skincare",
+      "image": "/eye-cream-luxury.jpg",
+      "images": ["/eye-cream-luxury.jpg", "/eye-cream-luxury.jpg", "/eye-cream-luxury.jpg"],
+      "description": "Nourishing eye cream for delicate skin"
+    },
+    {
+      "id": 3,
+      "name": "Moisturizer SPF",
+      "price": 62,
+      "category": "skincare",
+      "image": "/moisturizer-spf-sunscreen.jpg",
+      "images": ["/moisturizer-spf-sunscreen.jpg", "/moisturizer-spf-sunscreen.jpg", "/moisturizer-spf-sunscreen.jpg"],
+      "description": "Daily moisturizer with SPF protection"
+    },
+    {
+      "id": 4,
+      "name": "Facial Cleanser",
+      "price": 38,
+      "category": "skincare",
+      "image": "/facial-cleanser-luxury.jpg",
+      "images": ["/facial-cleanser-luxury.jpg", "/facial-cleanser-luxury.jpg", "/facial-cleanser-luxury.jpg"],
+      "description": "Gentle cleanser for all skin types"
+    },
+    {
+      "id": 5,
+      "name": "Night Cream",
+      "price": 58,
+      "category": "skincare",
+      "image": "/night-cream-moisturizer.jpg",
+      "images": ["/night-cream-moisturizer.jpg", "/night-cream-moisturizer.jpg", "/night-cream-moisturizer.jpg"],
+      "description": "Rich night cream for overnight renewal"
+    },
+    {
+      "id": 6,
+      "name": "Face Mask",
+      "price": 42,
+      "category": "skincare",
+      "image": "/luxury-face-mask-skincare.jpg",
+      "images": ["/luxury-face-mask-skincare.jpg", "/luxury-face-mask-skincare.jpg", "/luxury-face-mask-skincare.jpg"],
+      "description": "Luxurious face mask for pampering sessions"
+    },
+    {
+      "id": 7,
+      "name": "Toner",
+      "price": 35,
+      "category": "skincare",
+      "image": "/face-toner-skincare.jpg",
+      "images": ["/face-toner-skincare.jpg", "/face-toner-skincare.jpg", "/face-toner-skincare.jpg"],
+      "description": "Balancing toner for skin preparation"
+    },
+    {
+      "id": 8,
+      "name": "Retinol Treatment",
+      "price": 68,
+      "category": "skincare",
+      "image": "/retinol-treatment-skincare.jpg",
+      "images": ["/retinol-treatment-skincare.jpg", "/retinol-treatment-skincare.jpg", "/retinol-treatment-skincare.jpg"],
+      "description": "Advanced retinol treatment for anti-aging"
+    },
+    {
+      "id": 9,
+      "name": "Silk Serum",
+      "price": 49.99,
+      "category": "skincare",
+      "image": "/luxury-purple-cosmetic-serum-bottle.jpg",
+      "images": ["/luxury-purple-cosmetic-serum-bottle.jpg", "/luxury-cosmetic-bottle-detail.jpg", "/luxury-cosmetic-packaging.jpg"],
+      "description": "Luxurious silk-infused serum for radiant skin"
+    },
+    {
+      "id": 10,
+      "name": "Lavender Mask",
+      "price": 39.99,
+      "category": "skincare",
+      "image": "/luxury-purple-face-mask-jar.jpg",
+      "images": ["/luxury-purple-face-mask-jar.jpg", "/luxury-purple-face-mask-jar.jpg", "/luxury-purple-face-mask-jar.jpg"],
+      "description": "Calming lavender-infused face mask"
+    },
+    {
+      "id": 11,
+      "name": "Pearl Cream",
+      "price": 59.99,
+      "category": "skincare",
+      "image": "/luxury-white-pearl-cream-jar.jpg",
+      "images": ["/luxury-white-pearl-cream-jar.jpg", "/luxury-white-pearl-cream-jar.jpg", "/luxury-white-pearl-cream-jar.jpg"],
+      "description": "Premium pearl cream for luminous skin"
+    },
+    {
+      "id": 12,
+      "name": "Rose Oil",
+      "price": 44.99,
+      "category": "skincare",
+      "image": "/luxury-rose-oil-bottle.jpg",
+      "images": ["/luxury-rose-oil-bottle.jpg", "/luxury-rose-oil-bottle.jpg", "/luxury-rose-oil-bottle.jpg"],
+      "description": "Nourishing rose oil for skin radiance"
+    },
+    {
+      "id": 13,
+      "name": "Glow Toner",
+      "price": 34.99,
+      "category": "skincare",
+      "image": "/luxury-purple-toner-bottle.jpg",
+      "images": ["/luxury-purple-toner-bottle.jpg", "/luxury-purple-toner-bottle.jpg", "/luxury-purple-toner-bottle.jpg"],
+      "description": "Brightening toner for a radiant glow"
+    },
+    {
+      "id": 14,
+      "name": "Night Elixir",
+      "price": 54.99,
+      "category": "skincare",
+      "image": "/luxury-night-serum-bottle.jpg",
+      "images": ["/luxury-night-serum-bottle.jpg", "/luxury-night-serum-bottle.jpg", "/luxury-night-serum-bottle.jpg"],
+      "description": "Nighttime serum elixir for skin restoration"
+    }
+  ]
+}
