@@ -1,0 +1,77 @@
+{
+  "category": "haircare",
+  "products": [
+    {
+      "id": 49,
+      "name": "Volumizing Shampoo",
+      "price": 32,
+      "category": "haircare",
+      "image": "/volumizing-shampoo-haircare.jpg",
+      "images": ["/volumizing-shampoo-haircare.jpg", "/volumizing-shampoo-haircare.jpg", "/volumizing-shampoo-haircare.jpg"],
+      "description": "Volumizing shampoo for fuller hair"
+    },
+    {
+      "id": 50,
+      "name": "Deep Conditioner",
+      "price": 38,
+      "category": "haircare",
+      "image": "/deep-conditioner-haircare.jpg",
+      "images": ["/deep-conditioner-haircare.jpg", "/deep-conditioner-haircare.jpg", "/deep-conditioner-haircare.jpg"],
+      "description": "Rich deep conditioning treatment"
+    },
+    {
+      "id": 51,
+      "name": "Hair Growth Serum",
+      "price": 48,
+      "category": "haircare",
+      "image": "/hair-growth-serum.jpg",
+      "images": ["/hair-growth-serum.jpg", "/hair-growth-serum.jpg", "/hair-growth-serum.jpg"],
+      "description": "Serum to promote hair growth"
+    },
+    {
+      "id": 52,
+      "name": "Silk Hair Mask",
+      "price": 42,
+      "category": "haircare",
+      "image": "/silk-hair-mask-treatment.jpg",
+      "images": ["/silk-hair-mask-treatment.jpg", "/silk-hair-mask-treatment.jpg", "/silk-hair-mask-treatment.jpg"],
+      "description": "Luxurious silk hair mask treatment"
+    },
+    {
+      "id": 53,
+      "name": "Keratin Treatment",
+      "price": 55,
+      "category": "haircare",
+      "image": "/keratin-treatment-haircare.jpg",
+      "images": ["/keratin-treatment-haircare.jpg", "/keratin-treatment-haircare.jpg", "/keratin-treatment-haircare.jpg"],
+      "description": "Professional keratin treatment"
+    },
+    {
+      "id": 54,
+      "name": "Anti-Frizz Spray",
+      "price": 28,
+      "category": "haircare",
+      "image": "/anti-frizz-spray-haircare.jpg",
+      "images": ["/anti-frizz-spray-haircare.jpg", "/anti-frizz-spray-haircare.jpg", "/anti-frizz-spray-haircare.jpg"],
+      "description": "Anti-frizz spray for smooth hair"
+    },
+    {
+      "id": 55,
+      "name": "Hair Oil Elixir",
+      "price": 35,
+      "category": "haircare",
+      "image": "/hair-oil-elixir.jpg",
+      "images": ["/hair-oil-elixir.jpg", "/hair-oil-elixir.jpg", "/hair-oil-elixir.jpg"],
+      "description": "Luxurious hair oil elixir"
+    },
+    {
+      "id": 56,
+      "name": "Scalp Therapy Shampoo",
+      "price": 36,
+      "category": "haircare",
+      "image": "/scalp-therapy-shampoo.jpg",
+      "images": ["/scalp-therapy-shampoo.jpg", "/scalp-therapy-shampoo.jpg", "/scalp-therapy-shampoo.jpg"],
+      "description": "Therapeutic scalp shampoo"
+    }
+  ]
+}

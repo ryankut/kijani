@@ -1,0 +1,86 @@
+{
+  "category": "makeup",
+  "products": [
+    {
+      "id": 15,
+      "name": "Luxury Lipstick",
+      "price": 38,
+      "category": "makeup",
+      "image": "/luxury-lipstick-makeup.jpg",
+      "images": ["/luxury-lipstick-makeup.jpg", "/luxury-lipstick-makeup.jpg", "/luxury-lipstick-makeup.jpg"],
+      "description": "Premium luxury lipstick with rich, luxurious color"
+    },
+    {
+      "id": 16,
+      "name": "Foundation Primer",
+      "price": 35,
+      "category": "makeup",
+      "image": "/foundation-primer-makeup.jpg",
+      "images": ["/foundation-primer-makeup.jpg", "/foundation-primer-makeup.jpg", "/foundation-primer-makeup.jpg"],
+      "description": "Smooth, long-lasting makeup primer"
+    },
+    {
+      "id": 17,
+      "name": "Mascara Pro",
+      "price": 32,
+      "category": "makeup",
+      "image": "/mascara-professional-makeup.jpg",
+      "images": ["/mascara-professional-makeup.jpg", "/mascara-professional-makeup.jpg", "/mascara-professional-makeup.jpg"],
+      "description": "Professional-grade mascara with volumizing formula"
+    },
+    {
+      "id": 18,
+      "name": "Eye Shadow Palette",
+      "price": 55,
+      "category": "makeup",
+      "image": "/eyeshadow-palette-makeup.jpg",
+      "images": ["/eyeshadow-palette-makeup.jpg", "/eyeshadow-palette-makeup.jpg", "/eyeshadow-palette-makeup.jpg"],
+      "description": "Versatile eyeshadow palette with rich pigments"
+    },
+    {
+      "id": 19,
+      "name": "Blush",
+      "price": 28,
+      "category": "makeup",
+      "image": "/blush-makeup-product.jpg",
+      "images": ["/blush-makeup-product.jpg", "/blush-makeup-product.jpg", "/blush-makeup-product.jpg"],
+      "description": "Natural-looking blush for radiant cheeks"
+    },
+    {
+      "id": 20,
+      "name": "Eyeliner",
+      "price": 22,
+      "category": "makeup",
+      "image": "/eyeliner-makeup.jpg",
+      "images": ["/eyeliner-makeup.jpg", "/eyeliner-makeup.jpg", "/eyeliner-makeup.jpg"],
+      "description": "Precision eyeliner for perfect definition"
+    },
+    {
+      "id": 21,
+      "name": "Foundation",
+      "price": 48,
+      "category": "makeup",
+      "image": "/foundation-makeup-product.jpg",
+      "images": ["/foundation-makeup-product.jpg", "/foundation-makeup-product.jpg", "/foundation-makeup-product.jpg"],
+      "description": "Full-coverage foundation for flawless skin"
+    },
+    {
+      "id": 22,
+      "name": "Highlighter",
+      "price": 32,
+      "category": "makeup",
+      "image": "/highlighter-makeup-product.jpg",
+      "images": ["/highlighter-makeup-product.jpg", "/highlighter-makeup-product.jpg", "/highlighter-makeup-product.jpg"],
+      "description": "Shimmering highlighter for luminous glow"
+    },
+    {
+      "id": 23,
+      "name": "Liquid Lipstick",
+      "price": 29.99,
+      "category": "makeup",
+      "image": "/liquid-lipstick-makeup.jpg",
+      "images": ["/liquid-lipstick-makeup.jpg", "/liquid-lipstick-makeup.jpg", "/liquid-lipstick-makeup.jpg"],
+      "description": "Long-wearing liquid lipstick with bold color"
+    }
+  ]
+}

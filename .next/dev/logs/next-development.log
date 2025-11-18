@@ -1,0 +1,141 @@
+[00:00:01.291] Server  LOG     
+[00:00:01.292] Server  LOG        We detected TypeScript in your project and reconfigured your tsconfig.json file for you.
+[00:00:01.292] Server  LOG        The following suggested values were added to your tsconfig.json. These values can be changed to fit your project's needs:
+
+[00:00:01.294] Server  LOG        	- include was updated to add '.next/dev/types/**/*.ts'
+[00:00:01.294] Server  LOG     
+[00:00:01.295] Server  LOG        The following mandatory changes were made to your tsconfig.json:
+
+[00:00:01.295] Server  LOG        	- jsx was set to react-jsx (next.js uses the React automatic runtime)
+[00:00:01.295] Server  LOG     
+[00:00:01.611] Server  LOG      ✓ Ready in 1026ms
+[00:00:56.459] Server  LOG      ○ Compiling / ...
+[00:00:58.245] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:58.609] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <main className="min-h-scre...">
+      <Header>
+      <HeroCard>
+      <SmallSquareCards>
+      <AutoCarouselSection title="Featured P...">
+        <section className="py-12 px-4...">
+          <div className="max-w-7xl ...">
+            <div>
+            <div className="relative">
+              <Carousel opts={{align:"start", ...}} setApi={function bound dispatchSetState} className="w-full">
+                <div onKeyDownCapture={function Carousel.useCallback[handleKeyDown]} className="relative w..." ...>
+                  <CarouselContent>
+                    <div ref={function bound dispatchSetState} className="overflow-h..." data-slot="carousel-c...">
+                      <div className="flex -ml-4">
+                        <CarouselItem className="basis-full...">
+                          <div role="group" aria-roledescription="slide" data-slot="carousel-item" ...>
+                            <LinkComponent href="/product/10" className="group">
+                              <a
+                                className="group"
+                                ref={function}
+                                onClick={function onClick}
+                                onMouseEnter={function onMouseEnter}
+                                onTouchStart={function onTouchStart}
++                               href="/product/10"
+-                               href="/product/11"
+                              >
+                                <div className="bg-card ro...">
+                                  <div className="relative h...">
+                                    <img
++                                     src="/luxury-purple-face-mask-jar.jpg"
+-                                     src="/luxury-white-pearl-cream-jar.jpg"
++                                     alt="Lavender Mask"
+-                                     alt="Pearl Cream"
+                                      className="w-full h-full object-cover group-hover:scale-110 transition duration-300"
+                                    >
+                                    ...
+                                  <div className="p-4 flex f...">
+                                    <h3 className="font-semibold text-foreground mb-2">
++                                     Lavender Mask
+-                                     Pearl Cream
+                                    ...
+                        ...
+              ...
+      ...
+
+[00:14:57.685] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:15:00.055] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:15:02.579] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:16:30.037] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:07.937] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:09.269] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:23:04.518] Server  WARN     ⚠ Cross origin request detected from 192.168.31.204 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+[00:23:04.637] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:23:04.637] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <main className="min-h-scre...">
+      <Header>
+      <HeroCard>
+      <SmallSquareCards>
+      <AutoCarouselSection title="Featured P...">
+        <section className="py-12 px-4...">
+          <div className="max-w-7xl ...">
+            <div>
+            <div className="relative">
+              <Carousel opts={{align:"start", ...}} setApi={function bound dispatchSetState} className="w-full">
+                <div onKeyDownCapture={function Carousel.useCallback[handleKeyDown]} className="relative w..." ...>
+                  <CarouselContent>
+                    <div ref={function bound dispatchSetState} className="overflow-h..." data-slot="carousel-c...">
+                      <div className="flex -ml-4">
+                        <CarouselItem className="basis-full...">
+                          <div role="group" aria-roledescription="slide" data-slot="carousel-item" ...>
+                            <LinkComponent href="/product/12" className="group">
+                              <a
+                                className="group"
+                                ref={function}
+                                onClick={function onClick}
+                                onMouseEnter={function onMouseEnter}
+                                onTouchStart={function onTouchStart}
++                               href="/product/12"
+-                               href="/product/13"
+                              >
+                                <div className="bg-card ro...">
+                                  <div className="relative h...">
+                                    <img
++                                     src="/luxury-rose-oil-bottle.jpg"
+-                                     src="/luxury-purple-toner-bottle.jpg"
++                                     alt="Rose Oil"
+-                                     alt="Glow Toner"
+                                      className="w-full h-full object-cover group-hover:scale-110 transition duration-300"
+                                    >
+                                    ...
+                                  <div className="p-4 flex f...">
+                                    <h3 className="font-semibold text-foreground mb-2">
++                                     Rose Oil
+-                                     Glow Toner
+                                    ...
+                        ...
+              ...
+      ...
+
+[00:31:48.165] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:33:55.015] Server  LOG      ✓ Compiled in 414ms
+[00:34:05.251] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

@@ -1,0 +1,77 @@
+{
+  "category": "wellness",
+  "products": [
+    {
+      "id": 33,
+      "name": "Hair Growth Supplement",
+      "price": 48,
+      "category": "wellness",
+      "image": "/hair-growth-supplement.jpg",
+      "images": ["/hair-growth-supplement.jpg", "/hair-growth-supplement.jpg", "/hair-growth-supplement.jpg"],
+      "description": "Natural supplement for healthy hair growth"
+    },
+    {
+      "id": 34,
+      "name": "Collagen Powder",
+      "price": 55,
+      "category": "wellness",
+      "image": "/collagen-powder-beauty.jpg",
+      "images": ["/collagen-powder-beauty.jpg", "/collagen-powder-beauty.jpg", "/collagen-powder-beauty.jpg"],
+      "description": "Premium collagen powder for skin elasticity"
+    },
+    {
+      "id": 35,
+      "name": "Vitamin Serum",
+      "price": 52,
+      "category": "wellness",
+      "image": "/vitamin-serum-wellness.jpg",
+      "images": ["/vitamin-serum-wellness.jpg", "/vitamin-serum-wellness.jpg", "/vitamin-serum-wellness.jpg"],
+      "description": "Daily vitamin serum for wellness support"
+    },
+    {
+      "id": 36,
+      "name": "Hydration Tablets",
+      "price": 35,
+      "category": "wellness",
+      "image": "/hydration-tablets-wellness.jpg",
+      "images": ["/hydration-tablets-wellness.jpg", "/hydration-tablets-wellness.jpg", "/hydration-tablets-wellness.jpg"],
+      "description": "Electrolyte hydration tablets"
+    },
+    {
+      "id": 37,
+      "name": "Skin Glow Capsules",
+      "price": 62,
+      "category": "wellness",
+      "image": "/skin-glow-capsules.jpg",
+      "images": ["/skin-glow-capsules.jpg", "/skin-glow-capsules.jpg", "/skin-glow-capsules.jpg"],
+      "description": "Capsules for radiant, glowing skin"
+    },
+    {
+      "id": 38,
+      "name": "Bio Serum",
+      "price": 45,
+      "category": "wellness",
+      "image": "/bio-serum-wellness.jpg",
+      "images": ["/bio-serum-wellness.jpg", "/bio-serum-wellness.jpg", "/bio-serum-wellness.jpg"],
+      "description": "Bioavailable serum supplement"
+    },
+    {
+      "id": 39,
+      "name": "Antioxidant Blend",
+      "price": 58,
+      "category": "wellness",
+      "image": "/antioxidant-blend-wellness.jpg",
+      "images": ["/antioxidant-blend-wellness.jpg", "/antioxidant-blend-wellness.jpg", "/antioxidant-blend-wellness.jpg"],
+      "description": "Powerful antioxidant blend for health"
+    },
+    {
+      "id": 40,
+      "name": "Youth Complex",
+      "price": 70,
+      "category": "wellness",
+      "image": "/youth-complex-supplement.jpg",
+      "images": ["/youth-complex-supplement.jpg", "/youth-complex-supplement.jpg", "/youth-complex-supplement.jpg"],
+      "description": "Complete youth-enhancing supplement complex"
+    }
+  ]
+}
