@@ -6,12 +6,17 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'REHHA - Premium Cosmetics',
-  description: 'Discover premium beauty products with soft purple luxury aesthetic',
-  generator: 'v0.app',
+  title: 'REHHA - Glow Your Everyday Glam',
+  description: 'Where gentle meets glamorous —  Delivers a new standard of clean, modern beauty.',
+
+  authors: [{ 
+    name: 'Sujan Das', 
+    url: 'https://github.com/devsujandas' 
+  }],
+
   icons: {
-    icon: '/rehha-logo.png',
-    apple: '/rehha-logo.png',
+    icon: '/logo.png',
+    apple: '/logo.png',
   },
 }
 
@@ -22,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans antialiased`}>
+      <body className="font-sans antialiased">
         {children}
       </body>
     </html>
