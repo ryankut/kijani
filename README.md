@@ -1,10 +1,5 @@
 <div align="center" style="display: flex; align-items: center; justify-content: center;">
   <img src="https://github.com/devsujandas/rehha/blob/main/public/rehha-logo.png?raw=true" width="160" alt="rehha Logo" />
-
-  <div style="margin-left: 6px;">
-    <h1>REHHA</h1>
-    <p>A premium, modern and high-end cosmetics e-commerce platform built with a luxury UI and a seamless shopping experience.</p>
-  </div>
 </div>
 
 ---
