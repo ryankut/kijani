@@ -4,14 +4,23 @@ import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { Menu, Search, ShoppingCart, User, X, ChevronDown, HeadsetIcon } from 'lucide-react'
 import { searchProducts } from '@/lib/products'
+import Image from "next/image"
+
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
-  const [openDropdown, setOpenDropdown] = useState(null)
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const [searchQuery, setSearchQuery] = useState('')
-  const [searchResults, setSearchResults] = useState([])
+  type Product = {
+    id: string | number
+    name: string
+    image?: string
+    category?: string
+    price?: number
+  }
+  const [searchResults, setSearchResults] = useState<Product[]>([])
   const [showSearchResults, setShowSearchResults] = useState(false)
-  const searchRef = useRef(null)
+  const searchRef = useRef<HTMLDivElement>(null)
 
   const navItems = [
     { label: 'Home', href: '/' },
@@ -30,7 +39,7 @@ export default function Header() {
     { label: 'About', href: '/about' },
   ]
 
-  const handleSearch = (e) => {
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const query = e.target.value
     setSearchQuery(query)
     if (query.trim()) {
@@ -44,8 +53,8 @@ export default function Header() {
   }
 
   useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (searchRef.current && !searchRef.current.contains(e.target)) {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
         setShowSearchResults(false)
       }
     }
@@ -59,7 +68,7 @@ export default function Header() {
       <div className="bg-primary text-primary-foreground text-xs sm:text-sm py-2 px-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <span className="hidden sm:inline">REHHA — Glow Your Everyday Glam</span>
-          <span className="sm:hidden">REHHA - Premium Beauty</span>
+          <span className="sm:hidden">REHHA — Glow Your Everyday Glam</span>
           <div className="flex gap-2 sm:gap-4 items-center">
             <button>EN</button>
             <Link href="/support" className="hover:opacity-80 transition">
@@ -75,7 +84,16 @@ export default function Header() {
           <div className="flex items-center justify-between gap-2 sm:gap-4">
 
             {/* Logo */}
-            <Link href="/" className="text-xl sm:text-2xl text-primary font-semibold">REHHA</Link>
+         <Link href="/" className="flex items-center">
+        <Image
+        src="/rehha-logo.png"
+        alt="Rehha Logo"
+        width={180}         
+        height={50}         
+        className="h-10 sm:h-12 w-auto"   
+        priority
+        />
+        </Link>
 
             {/* Search bar - desktop */}
             <div className="hidden md:flex flex-1 mx-4">
