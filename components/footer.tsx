@@ -133,7 +133,7 @@ export default function Footer() {
               {subscribed && (
                 <div className="
                   w-36 h-11 mt-0 rounded-lg 
-                  bg-green-500 text-white 
+                  bg-accent text-accent-foreground
                   flex items-center justify-center 
                   text-sm transition-all duration-500 animate-shrinkBack
                 ">
@@ -146,8 +146,8 @@ export default function Footer() {
 
         {/* Footer bottom */}
         <div className="border-t border-primary-foreground/20 pt-6 text-center text-sm opacity-75">
-          <p className="mb-2">&copy; 2025 REHHA. All rights reserved.</p>
-          <p className="text-xs">Designed & Developed by Sujan Das.</p>
+          <p className="mb-2">&copy; 2025 Kijani. All rights reserved.</p>
+          <p className="text-xs">Designed &amp; Developed by Sujan Das.</p>
         </div>
       </div>
 

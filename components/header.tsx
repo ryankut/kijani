@@ -24,19 +24,12 @@ export default function Header() {
 
   const navItems = [
     { label: 'Home', href: '/' },
-    { label: 'Shop All', href: '/shop-all' },
-    {
-      label: 'Shop',
-      dropdown: [
-        { label: 'Makeup', href: '/makeup' },
-        { label: 'Skincare', href: '/skincare' },
-        { label: 'Wellness', href: '/wellness' },
-        { label: 'Fragrance', href: '/fragrance' },
-        { label: 'Sets', href: '/sets' },
-        { label: 'Haircare', href: '/haircare' },
-      ]
-    },
     { label: 'About', href: '/about' },
+    { label: 'Skin Care', href: '/skincare' },
+    { label: 'Hair Care', href: '/haircare' },
+    { label: 'Baby Products', href: '/babyproducts' },
+    { label: 'Consult Dermatologist', href: '/consultdermatologist' },
+    { label: 'Careers', href: '/careers' },
   ]
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -67,8 +60,8 @@ export default function Header() {
       {/* Top mini bar */}
       <div className="bg-primary text-primary-foreground text-xs sm:text-sm py-2 px-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <span className="hidden sm:inline">REHHA — Glow Your Everyday Glam</span>
-          <span className="sm:hidden">REHHA — Glow Your Everyday Glam</span>
+          <span className="hidden sm:inline">Kijani - Natural remedies for your hair and skin.</span>
+          <span className="sm:hidden">Kijani - Natural remedies for your hair and skin.</span>
           <div className="flex gap-2 sm:gap-4 items-center">
             <button>EN</button>
             <Link href="/support" className="hover:opacity-80 transition">
@@ -84,16 +77,16 @@ export default function Header() {
           <div className="flex items-center justify-between gap-2 sm:gap-4">
 
             {/* Logo */}
-         <Link href="/" className="flex items-center">
-        <Image
-        src="/rehha-logo.png"
-        alt="Rehha Logo"
-        width={180}         
-        height={50}         
-        className="h-10 sm:h-12 w-auto"   
-        priority
-        />
-        </Link>
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/kijani-logo.png"
+                alt="Kijani Logo"
+                width={3466}
+                height={1546}
+                className="h-10 sm:h-12 w-auto"
+                priority
+              />
+            </Link>
 
             {/* Search bar - desktop */}
             <div className="hidden md:flex flex-1 mx-4">
@@ -200,7 +193,7 @@ export default function Header() {
               <nav className="flex flex-col gap-3">
                 {navItems.map((item) => (
                   <div key={item.label}>
-                    {item.dropdown ? (
+                    {(item as any).dropdown ? (
                       <button
                         onClick={() => setOpenDropdown(openDropdown === item.label ? null : item.label)}
                         className="flex items-center justify-between w-full hover:text-primary transition text-base"
@@ -210,16 +203,16 @@ export default function Header() {
                       </button>
                     ) : (
                       <Link
-                        href={item.href}
+                        href={(item as any).href}
                         className="block hover:text-primary transition text-base"
                         onClick={() => setIsOpen(false)}
                       >
                         {item.label}
                       </Link>
                     )}
-                    {item.dropdown && openDropdown === item.label && (
+                    {(item as any).dropdown && openDropdown === item.label && (
                       <div className="pl-4 mt-2 space-y-2 border-l border-border">
-                        {item.dropdown.map((subitem) => (
+                        {(item as any).dropdown.map((subitem: any) => (
                           <Link
                             key={subitem.href}
                             href={subitem.href}
@@ -240,14 +233,13 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:block bg-secondary/20 border-t border-border">
-          <div className="max-w-7xl mx-auto w-full px-4 py-2 flex justify-center gap-8 text-sm text-black bg-neutral-300">
+          <div className="max-w-7xl mx-auto w-full px-4 py-2 flex justify-center gap-8 text-sm bg-primary text-primary-foreground">
             {navItems.map((item) => (
               <div key={item.label} className="relative">
-
-                {item.dropdown ? (
+                {(item as any).dropdown ? (
                   <button
                     onClick={() => setOpenDropdown(openDropdown === item.label ? null : item.label)}
-                    className="hover:text-primary transition flex items-center gap-1 py-2"
+                    className="hover:text-accent transition flex items-center gap-1 py-2"
                   >
                     {item.label}
                     <ChevronDown
@@ -258,16 +250,16 @@ export default function Header() {
                   </button>
                 ) : (
                   <Link
-                    href={item.href}
-                    className="hover:text-primary transition py-2 block"
+                    href={(item as any).href}
+                    className="hover:text-accent transition py-2 block"
                   >
                     {item.label}
                   </Link>
                 )}
 
-                {item.dropdown && openDropdown === item.label && (
+                {(item as any).dropdown && openDropdown === item.label && (
                   <div className="absolute left-0 mt-0 w-40 bg-card border border-border rounded-lg shadow-lg z-20">
-                    {item.dropdown.map((subitem) => (
+                    {(item as any).dropdown.map((subitem: any) => (
                       <Link
                         key={subitem.href}
                         href={subitem.href}
