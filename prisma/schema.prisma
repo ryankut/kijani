@@ -1,0 +1,38 @@
+   generator client {
+     provider = "prisma-client"
+     output   = "../generated/prisma"
+   }
+
+   datasource db {
+     provider = "postgresql"
+   }
+
+   model HeroSlide {
+     id          String   @id @default(cuid())
+     headline    String
+     subtext     String?
+     imagePath   String
+     buttonLabel String?
+     buttonHref  String?
+     sortOrder   Int      @default(0)
+     isActive    Boolean  @default(true)
+     createdAt   DateTime @default(now())
+     updatedAt   DateTime @updatedAt
+   }
+
+   model Category {
+     id          String     @id @default(cuid())
+     name        String
+     slug        String     @unique
+     description String?
+     imagePath   String?
+     parentId    String?
+     parent      Category?  @relation("CategoryTree", fields: [parentId], references: [id], onDelete: Restrict)
+     children    Category[] @relation("CategoryTree")
+     sortOrder   Int        @default(0)
+     isActive    Boolean    @default(true)
+     createdAt   DateTime   @default(now())
+     updatedAt   DateTime   @updatedAt
+
+     @@index([parentId])
+   }
