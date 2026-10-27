@@ -16,11 +16,15 @@ export default async function AdminHome() {
           </form>
         </div>
            <nav className="grid sm:grid-cols-2 gap-4">
-     <Link href="/admin/hero" className="block bg-card border border-border rounded-2xl p-6 hover:shadow-md transition">
-       <h2 className="font-semibold text-foreground">Hero slides</h2>
-       <p className="text-sm text-muted-foreground mt-1">Homepage banner images and text.</p>
-     </Link>
-   </nav>
+            <Link href="/admin/hero" className="block bg-card border border-border rounded-2xl p-6 hover:shadow-md transition">
+              <h2 className="font-semibold text-foreground">Hero slides</h2>
+              <p className="text-sm text-muted-foreground mt-1">Homepage banner images and text.</p>
+            </Link>
+            <Link href="/admin/categories" className="block bg-card border border-border rounded-2xl p-6 hover:shadow-md transition">
+              <h2 className="font-semibold text-foreground">Categories</h2>
+              <p className="text-sm text-muted-foreground mt-1">Departments and subcategories.</p>
+            </Link>
+          </nav>
       </div>
     </main>
   );
