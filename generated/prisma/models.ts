@@ -10,4 +10,10 @@
  */
 export type * from './models/HeroSlide'
 export type * from './models/Category'
+export type * from './models/Product'
+export type * from './models/ProductVariant'
+export type * from './models/ProductImage'
+export type * from './models/Tag'
+export type * from './models/ProductTag'
+export type * from './models/ProductCategory'
 export type * from './commonInputTypes'

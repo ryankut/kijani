@@ -35,4 +35,86 @@
      updatedAt   DateTime   @updatedAt
 
      @@index([parentId])
+    products ProductCategory[]
    }
+
+   model Product {
+  id               String   @id @default(cuid())
+  slug             String   @unique
+  name             String
+  shortDescription String
+  longDescription  String
+  price            Int
+  compareAtPrice   Int?
+  ingredients      String?
+  howToUse         String?
+  benefits         String?
+  badges           String[] @default([])
+  isActive         Boolean  @default(true)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  variants   ProductVariant[]
+  images     ProductImage[]
+  tags       ProductTag[]
+  categories ProductCategory[]
+
+  @@index([isActive])
+}
+
+model ProductVariant {
+  id        String  @id @default(cuid())
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  size      String
+  sku       String?
+  price     Int
+  stock     Int     @default(0)
+  sortOrder Int     @default(0)
+
+  @@unique([productId, size])
+  @@index([productId])
+}
+
+model ProductImage {
+  id        String  @id @default(cuid())
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  url       String
+  alt       String?
+  sortOrder Int     @default(0)
+
+  @@index([productId])
+}
+
+model Tag {
+  id    String @id @default(cuid())
+  name  String
+  slug  String
+  type  String
+
+  products ProductTag[]
+
+  @@unique([type, slug])
+}
+
+model ProductTag {
+  productId String
+  tagId     String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  tag       Tag     @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([productId, tagId])
+  @@index([tagId])
+}
+
+model ProductCategory {
+  productId  String
+  categoryId String
+  product    Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  category   Category @relation(fields: [categoryId], references: [id], onDelete: Restrict)
+  isPrimary  Boolean  @default(false)
+
+  @@id([productId, categoryId])
+  @@index([categoryId])
+}

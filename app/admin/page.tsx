@@ -24,6 +24,14 @@ export default async function AdminHome() {
               <h2 className="font-semibold text-foreground">Categories</h2>
               <p className="text-sm text-muted-foreground mt-1">Departments and subcategories.</p>
             </Link>
+            <Link href="/admin/products" className="block bg-card border border-border rounded-2xl p-6 hover:shadow-md transition">
+              <h2 className="font-semibold text-foreground">Products</h2>
+              <p className="text-sm text-muted-foreground mt-1">Product catalogue with variants, images and tags.</p>
+            </Link>
+            <Link href="/admin/tags" className="block bg-card border border-border rounded-2xl p-6 hover:shadow-md transition">
+              <h2 className="font-semibold text-foreground">Tags</h2>
+              <p className="text-sm text-muted-foreground mt-1">Skin types, hair types and concerns.</p>
+            </Link>
           </nav>
       </div>
     </main>
