@@ -54,7 +54,7 @@ function fail(path: string, message: string): never {
 }
 
 function refresh() {
-  revalidatePath("/");
+  revalidatePath("/", "layout");
   revalidatePath("/admin/categories");
 }
 
@@ -131,13 +131,18 @@ export async function deleteCategory(id: string) {
   const cat = await db.category.findUnique({ where: { id } });
   if (!cat) return;
 
-  const productCount = await db.category.count({ where: { parentId: id } });
-  if (productCount > 0) {
+  const childCount = await db.category.count({ where: { parentId: id } });
+  if (childCount > 0) {
     redirect(`/admin/categories?error=${encodeURIComponent("Delete child categories first.")}`);
   }
 
+  const productCount = await db.productCategory.count({ where: { categoryId: id } });
+  if (productCount > 0) {
+    redirect(`/admin/categories?error=${encodeURIComponent("Move or remove this category's products first.")}`);
+  }
+
   await db.category.delete({ where: { id } });
-  await deleteImageByUrl(cat.imagePath);
+  if (cat.imagePath) await deleteImageByUrl(cat.imagePath);
   refresh();
 }
 

@@ -21,6 +21,7 @@ function fail(path: string, message: string): never {
 }
 
 function refresh() {
+  revalidatePath("/", "layout");
   revalidatePath("/admin/tags");
   revalidatePath("/admin/products");
 }

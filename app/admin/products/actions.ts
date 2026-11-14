@@ -37,15 +37,40 @@ function fail(path: string, message: string): never {
 }
 
 function refresh() {
-  revalidatePath("/");
+  revalidatePath("/", "layout");
   revalidatePath("/admin/products");
 }
 
-async function parseProductForm(formData: FormData) {
+type ProductData = Omit<
+  z.infer<typeof productSchema>,
+  "compareAtPrice" | "ingredients" | "howToUse" | "benefits" | "badges"
+> & {
+  compareAtPrice: number | null;
+  ingredients: string | null;
+  howToUse: string | null;
+  benefits: string | null;
+  badges: string[];
+};
+
+type ParsedProduct =
+  | { error: string }
+  | {
+      data: ProductData;
+      variants: z.infer<typeof variantSchema>[];
+      images: { url: string; alt: string }[];
+      tagIds: string[];
+      primaryCategoryId: string;
+      alsoInCategoryIds: string[];
+    };
+
+  async function parseProductForm(
+    formData: FormData,
+    allowedExistingUrls: Set<string> = new Set()
+  ): Promise<ParsedProduct> {
   const parsed = productSchema.safeParse(Object.fromEntries(formData.entries()));
   if (!parsed.success) return { error: parsed.error.issues[0].message as string };
 
-  const variants = [];
+  const variants: z.infer<typeof variantSchema>[] = [];
   for (let i = 0; i < 20; i++) {
     const size = String(formData.get(`variants[${i}].size`) ?? "").trim();
     if (!size) continue;
@@ -60,11 +85,14 @@ async function parseProductForm(formData: FormData) {
   }
   if (variants.length === 0) return { error: "Add at least one variant (a size)." };
 
+  const sizes = variants.map((v) => v.size.toLowerCase());
+   if (new Set(sizes).size !== sizes.length) return { error: "Each variant needs a different size." };
+  
   const images: { url: string; alt: string }[] = [];
   for (let i = 0; i < 5; i++) {
     const url = String(formData.get(`images[${i}].url`) ?? "").trim();
     if (!url) continue;
-    if (!isOurImage(url, "products")) return { error: `Image ${i + 1} is invalid. Please re-upload.` };
+       if (!isOurImage(url, "products") && !allowedExistingUrls.has(url)) return { error: `Image ${i + 1} is invalid. Please re-upload.` };
     images.push({ url, alt: String(formData.get(`images[${i}].alt`) ?? "") });
   }
   if (images.length === 0) return { error: "Upload at least one product image." };
@@ -130,7 +158,7 @@ export async function updateProduct(id: string, formData: FormData) {
   });
   if (!existing) redirect("/admin/products");
 
-  const result = await parseProductForm(formData);
+  const result = await parseProductForm(formData, new Set(existing.images.map((i) => i.url)));
   if ("error" in result) fail(back, result.error);
 
   if (result.data.slug !== existing.slug) {
@@ -141,7 +169,6 @@ export async function updateProduct(id: string, formData: FormData) {
   // Delete images that are no longer in the new list
   const newUrls = new Set(result.images.map((i) => i.url));
   const removed = existing.images.filter((img) => !newUrls.has(img.url));
-  for (const img of removed) await deleteImageByUrl(img.url);
 
   await db.$transaction([
     db.productImage.deleteMany({ where: { productId: id } }),
@@ -164,6 +191,8 @@ export async function updateProduct(id: string, formData: FormData) {
       },
     }),
   ]);
+
+  for (const img of removed) await deleteImageByUrl(img.url);
 
   refresh();
   redirect("/admin/products");

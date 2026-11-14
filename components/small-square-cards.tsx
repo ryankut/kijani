@@ -59,7 +59,7 @@ export default function SmallSquareCards({ categories }: { categories: HomeCateg
           {categories.map((cat) => (
             <Link
               key={cat.id}
-              href={`/${cat.slug}`}
+              href={`/shop/${cat.slug}`}
               className="group relative aspect-[4/3] rounded-2xl overflow-hidden bg-muted hover:shadow-lg transition-shadow"
             >
               {cat.imagePath ? (
@@ -90,7 +90,7 @@ export default function SmallSquareCards({ categories }: { categories: HomeCateg
             {categories.map((cat, idx) => (
               <Link
                 key={cat.id}
-                href={`/${cat.slug}`}
+                href={`/shop/${cat.slug}`}
                 className={`block relative aspect-square rounded-2xl overflow-hidden bg-muted transition-opacity duration-300 ${
                   idx === currentIndex ? 'opacity-100' : 'opacity-0 pointer-events-none absolute inset-0'
                 }`}

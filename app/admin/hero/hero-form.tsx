@@ -22,9 +22,9 @@
    const HERO_PAGE_OPTIONS = [
     { value: "", label: "(No button)" },
     { value: "/", label: "Home" },
-    { value: "/skincare", label: "Skin Care" },
-    { value: "/haircare", label: "Hair Care" },
-    { value: "/babyproducts", label: "Baby Products" },
+    { value: "/shop/skincare", label: "Skin Care" },
+    { value: "/shop/haircare", label: "Hair Care" },
+    { value: "/shop/babyproducts", label: "Baby Products" },
     { value: "/consultdermatologist", label: "Consult a Dermatologist" },
     { value: "/about", label: "About" },
     { value: "/careers", label: "Careers" },

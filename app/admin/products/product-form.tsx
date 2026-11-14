@@ -38,6 +38,10 @@ const field =
   "w-full px-4 py-2 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary";
 const label = "block text-sm font-medium text-foreground mb-1";
 
+const newKey = () => Math.random().toString(36).slice(2);
+type VariantRow = Variant & { key: string };
+type ImageRow = ProductImage & { key: string };
+
 export default function ProductForm({
   action,
   submitLabel,
@@ -46,12 +50,12 @@ export default function ProductForm({
   product,
   error,
 }: Props) {
-  const [variantRows, setVariantRows] = useState<Variant[]>(
-    product?.variants.length ? product.variants : [{ size: "", price: 1000, stock: 0, sku: "" }]
-  );
-  const [imageRows, setImageRows] = useState<ProductImage[]>(
-    product?.images.length ? product.images : [{ url: "", alt: "" }]
-  );
+     const [variantRows, setVariantRows] = useState<VariantRow[]>(
+     (product?.variants.length ? product.variants : [{ size: "", price: 1000, stock: 0, sku: "" }]).map((v) => ({ ...v, key: newKey() }))
+   );
+   const [imageRows, setImageRows] = useState<ImageRow[]>(
+     (product?.images.length ? product.images : [{ url: "", alt: "" }]).map((i) => ({ ...i, key: newKey() }))
+   );
 
   const parents = categories.filter((c) => !c.parentId);
   const childrenByParent = new Map<string, Category[]>();
@@ -63,11 +67,12 @@ export default function ProductForm({
     }
   }
 
+  
   const addVariant = () =>
-    setVariantRows([...variantRows, { size: "", price: variantRows[0]?.price ?? 1000, stock: 0, sku: "" }]);
-  const removeVariant = (i: number) => setVariantRows(variantRows.filter((_, idx) => idx !== i));
+  setVariantRows([...variantRows, { size: "", price: variantRows[0]?.price ?? 1000, stock: 0, sku: "", key: newKey() }]);
+  const addImage = () => setImageRows([...imageRows, { url: "", alt: "", key: newKey() }]);
 
-  const addImage = () => setImageRows([...imageRows, { url: "", alt: "" }]);
+  const removeVariant = (i: number) => setVariantRows(variantRows.filter((_, idx) => idx !== i));
   const removeImage = (i: number) => setImageRows(imageRows.filter((_, idx) => idx !== i));
 
   return (
@@ -140,7 +145,7 @@ export default function ProductForm({
         </div>
         <div className="space-y-2">
           {variantRows.map((v, i) => (
-            <div key={i} className="grid grid-cols-12 gap-2">
+            <div key={v.key} className="grid grid-cols-12 gap-2">
               <input name={`variants[${i}].size`} defaultValue={v.size} placeholder="250ml" className={`${field} col-span-4`} />
               <input name={`variants[${i}].price`} type="number" min={0} defaultValue={v.price} placeholder="Price" className={`${field} col-span-3`} />
               <input name={`variants[${i}].stock`} type="number" min={0} defaultValue={v.stock} placeholder="Stock" className={`${field} col-span-2`} />
@@ -161,7 +166,7 @@ export default function ProductForm({
         </div>
         <div className="space-y-3">
           {imageRows.map((img, i) => (
-            <div key={i} className="border border-border rounded-lg p-3">
+            <div key={img.key} className="border border-border rounded-lg p-3">
               <ImageUpload
                 name={`images[${i}].url`}
                 folder="products"
