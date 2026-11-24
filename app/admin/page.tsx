@@ -32,6 +32,10 @@ export default async function AdminHome() {
               <h2 className="font-semibold text-foreground">Tags</h2>
               <p className="text-sm text-muted-foreground mt-1">Skin types, hair types and concerns.</p>
             </Link>
+            <Link href="/admin/articles" className="block bg-card border border-border rounded-2xl p-6 hover:shadow-md transition">
+              <h2 className="font-semibold text-foreground">Articles</h2>
+              <p className="text-sm text-muted-foreground mt-1">Advice articles shown on the homepage and About page.</p>
+            </Link>
           </nav>
       </div>
     </main>

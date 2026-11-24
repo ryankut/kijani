@@ -111,3 +111,25 @@ export async function getRelatedProducts(productId: string, primaryCategoryId: s
     take: 4,
   });
 }
+
+export async function getProductsForCategory(categoryId: string, take = 8) {
+  const cat = await db.category.findUnique({
+    where: { id: categoryId },
+    include: { children: { select: { id: true } } },
+  });
+  if (!cat) return [];
+
+  const ids = cat.parentId ? [cat.id] : [cat.id, ...cat.children.map((c) => c.id)];
+  const products = await getProductCards({ where: inCategories(ids), take });
+  if (products.length >= 2 || !cat.parentId) return products;
+
+  const dept = await db.category.findUnique({
+    where: { id: cat.parentId },
+    include: { children: { select: { id: true } } },
+  });
+  if (!dept) return products;
+  return getProductCards({
+    where: inCategories([dept.id, ...dept.children.map((c) => c.id)]),
+    take,
+  });
+}

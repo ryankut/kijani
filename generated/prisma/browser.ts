@@ -57,3 +57,8 @@ export type ProductTag = Prisma.ProductTagModel
  * 
  */
 export type ProductCategory = Prisma.ProductCategoryModel
+/**
+ * Model Article
+ * 
+ */
+export type Article = Prisma.ArticleModel

@@ -141,6 +141,11 @@ export async function deleteCategory(id: string) {
     redirect(`/admin/categories?error=${encodeURIComponent("Move or remove this category's products first.")}`);
   }
 
+  const articleCount = await db.article.count({ where: { categoryId: id } });
+  if (articleCount > 0) {
+    redirect(`/admin/categories?error=${encodeURIComponent("Move or delete this category's articles first.")}`);
+  }
+
   await db.category.delete({ where: { id } });
   if (cat.imagePath) await deleteImageByUrl(cat.imagePath);
   refresh();

@@ -1,13 +1,12 @@
-'use client'
 
-import { useState } from 'react'
+
+import ArticlesSection from '@/components/store/articles-section'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 import { Heart, Sparkles, Leaf, Users, Award, Globe } from 'lucide-react'
 import Link from 'next/link'
 
 export default function AboutPage() {
-  const [activeTab, setActiveTab] = useState('story')
 
   const team = [
     { 
@@ -227,6 +226,8 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+
+        <ArticlesSection title="Skincare & haircare advice" />
 
         {/* CTA */}
         <section className="py-20 px-4 text-center bg-white">

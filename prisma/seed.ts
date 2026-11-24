@@ -23,38 +23,8 @@ const tree = [
 const slugify = (s: string) =>
   s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
-type SeedProduct = { name: string; primary: string; also?: string[]; image: string };
 
-const products: SeedProduct[] = [
-  { name: "Cleansing Oil", primary: "cleansers", image: "/luxury-rose-oil-bottle.jpg" },
-  { name: "Shower Gel", primary: "cleansers", image: "/facial-cleanser-luxury.jpg" },
-  { name: "Vitamin C Serum", primary: "facial-serums", image: "/vitamin-serum-wellness.jpg" },
-  { name: "Moisturizing Face Cream", primary: "moisturisers", image: "/luxury-white-pearl-cream-jar.jpg" },
-  { name: "Aloe Vera Gel", primary: "moisturisers", image: "/luxury-purple-toner-bottle.jpg" },
-  { name: "Shea Butter", primary: "butters", image: "/night-cream-moisturizer.jpg" },
-  { name: "Raw Shea Butter", primary: "butters", image: "/luxury-white-pearl-cream-jar.jpg" },
-  { name: "Sunscreen", primary: "sunscreen", image: "/moisturizer-spf-sunscreen.jpg" },
-  { name: "Herbs Infused Hair Oil", primary: "growth-tonics", image: "/hair-oil-elixir.jpg" },
-  { name: "Rosemary Oil", primary: "growth-tonics", image: "/hair-growth-serum.jpg" },
-  { name: "Castor Oil", primary: "growth-tonics", image: "/hair-oil-elixir.jpg" },
-  { name: "Black Seed Oil", primary: "growth-tonics", image: "/hair-growth-serum.jpg" },
-  { name: "Leave-in Conditioner", primary: "leave-in-conditioners", image: "/deep-conditioner-haircare.jpg" },
-  { name: "Aloe Leave-in Conditioner", primary: "leave-in-conditioners", image: "/silk-hair-mask-treatment.jpg" },
-  { name: "Keratin Protein Treatment", primary: "treatments", image: "/keratin-treatment-haircare.jpg" },
-  { name: "Coconut Oil", primary: "natural-oils", also: ["skincare"], image: "/hair-oil-elixir.jpg" },
-  { name: "Extra Virgin Olive Oil", primary: "natural-oils", also: ["skincare"], image: "/luxury-rose-oil-bottle.jpg" },
-  { name: "Flaxseed Oil", primary: "natural-oils", also: ["skincare"], image: "/hair-oil-elixir.jpg" },
-  { name: "Grape Seed Oil", primary: "natural-oils", also: ["skincare"], image: "/luxury-rose-oil-bottle.jpg" },
-  { name: "Jojoba Oil", primary: "natural-oils", also: ["skincare"], image: "/hair-oil-elixir.jpg" },
-  { name: "Neem Oil", primary: "natural-oils", also: ["skincare"], image: "/luxury-rose-oil-bottle.jpg" },
-  { name: "Papaya Seed Oil", primary: "natural-oils", also: ["skincare"], image: "/hair-oil-elixir.jpg" },
-  { name: "Sweet Almond Oil", primary: "natural-oils", also: ["skincare"], image: "/luxury-rose-oil-bottle.jpg" },
-  { name: "Rosehip Oil", primary: "natural-oils", also: ["skincare"], image: "/luxury-rose-oil-bottle.jpg" },
-  { name: "Kids Hair Growth Oil", primary: "kids-hair", image: "/hair-oil-elixir.jpg" },
-  { name: "Kids Hair Oil", primary: "kids-hair", image: "/hair-oil-elixir.jpg" },
-  { name: "Kids Hair Care Set", primary: "kids-hair", image: "/volumizing-shampoo-haircare.jpg" },
-  { name: "Kids Moisturizer", primary: "kids-skincare", image: "/luxury-white-pearl-cream-jar.jpg" },
-];
+
 
 async function main() {
   for (const [i, parent] of tree.entries()) {
@@ -81,17 +51,6 @@ async function main() {
     }
   }
 
-  const cats = await prisma.category.findMany({ select: { id: true, slug: true } });
-  const idBySlug = new Map(cats.map((c) => [c.slug, c.id]));
-
-  for (const p of products) {
-    const slug = slugify(p.name);
-    if (await prisma.product.findUnique({ where: { slug } })) continue;
-    const primaryId = idBySlug.get(p.primary);
-    if (!primaryId) {
-      console.warn(`Skipping ${p.name}: category "${p.primary}" not found`);
-      continue;
-    }
     const alsoIds = (p.also ?? []).map((s) => idBySlug.get(s)).filter((id): id is string => !!id);
     await prisma.product.create({
       data: {

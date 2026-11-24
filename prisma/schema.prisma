@@ -36,6 +36,8 @@
 
      @@index([parentId])
     products ProductCategory[]
+    articles Article[]
+
    }
 
    model Product {
@@ -116,5 +118,29 @@ model ProductCategory {
   isPrimary  Boolean  @default(false)
 
   @@id([productId, categoryId])
+  @@index([categoryId])
+}
+
+enum ArticleStatus {
+  DRAFT
+  PUBLISHED
+}
+
+model Article {
+  id          String        @id @default(cuid())
+  slug        String        @unique
+  title       String
+  subtitle    String
+  coverImage  String
+  intro       String
+  authorName  String?
+  status      ArticleStatus @default(DRAFT)
+  publishedAt DateTime?
+  categoryId  String
+  category    Category      @relation(fields: [categoryId], references: [id], onDelete: Restrict)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@index([status, publishedAt])
   @@index([categoryId])
 }
